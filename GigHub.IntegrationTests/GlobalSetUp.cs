@@ -6,10 +6,10 @@ namespace GigHub.IntegrationTests
     [SetUpFixture]
     public class GlobalSetUp
     {
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
-            var configuration = new Migrations.Configuration();
+            var configuration = new GigHub.Migrations.Configuration();
             var migrator = new DbMigrator(configuration);
             migrator.Update();
         }
