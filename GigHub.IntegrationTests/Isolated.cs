@@ -17,14 +17,14 @@ namespace GigHub.IntegrationTests
             }
         }
 
-        public void AfterTest(ITest test)
+        public void BeforeTest(ITest test)
         {
             _transactionScope = new TransactionScope();
         }
 
-        public void BeforeTest(ITest test)
+        public void AfterTest(ITest test)
         {
             _transactionScope.Dispose();
-        }
+        }       
     }
 }
